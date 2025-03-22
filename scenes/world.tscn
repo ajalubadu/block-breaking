@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf0aa03dtbx8u"]
+[gd_scene load_steps=9 format=3 uid="uid://bf0aa03dtbx8u"]
 
 [ext_resource type="PackedScene" uid="uid://bvxcjmnngy2p2" path="res://scenes/bar.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://l60bfae15clg" path="res://assets/background.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c6d5865lxpy2t" path="res://scenes/ball.tscn" id="3_4wyf3"]
+[ext_resource type="Script" uid="uid://t7xphttb8ltj" path="res://scenes/speed_counter.gd" id="3_71j4m"]
 [ext_resource type="Script" uid="uid://cxfb3j88hbifc" path="res://scripts/block_spawner.gd" id="4_k0juu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
@@ -40,11 +41,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("2_rwgxs")
+
+[node name="SpeedCounter" type="Label" parent="Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 47.0
+offset_bottom = 28.0
+text = "test"
+script = ExtResource("3_71j4m")
 
 [node name="Ball" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(160, 144)
