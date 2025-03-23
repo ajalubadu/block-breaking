@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://caf3bdmscjls4" path="res://assets/fonts/upheavtt.ttf" id="3_qfnet"]
 [ext_resource type="Script" uid="uid://cxfb3j88hbifc" path="res://scripts/block_spawner.gd" id="4_k0juu"]
 [ext_resource type="FontFile" uid="uid://dkiptg6tfl152" path="res://assets/fonts/UpheavalTT-BRK-2.ttf" id="5_i7141"]
-[ext_resource type="Script" uid="uid://sks0n7hea618" path="res://scenes/score_counter.gd" id="6_4mrxx"]
+[ext_resource type="Script" uid="uid://sks0n7hea618" path="res://scripts/score_counter.gd" id="6_4mrxx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
 normal = Vector2(1, 0)

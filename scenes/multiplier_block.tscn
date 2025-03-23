@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://33by21enbdlj"]
+
+[ext_resource type="Script" uid="uid://cds58aw5xf5wb" path="res://multiplier_block.gd" id="1_ayjot"]
+[ext_resource type="Texture2D" uid="uid://d3irs8j7d4tw" path="res://assets/sprites/pink block animated.png" id="2_bncpx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77b7o"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pleo"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(14, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x66g"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(21, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfpf0"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(28, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hesof"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(35, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsq6c"]
+atlas = ExtResource("2_bncpx")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51ojm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77b7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pleo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x66g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfpf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hesof")
+}],
+"loop": false,
+"name": &"break",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsq6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40h0e"]
+size = Vector2(7, 7)
+
+[node name="MultiplierBlock" type="StaticBody2D"]
+script = ExtResource("1_ayjot")
+metadata/_custom_type_script = "uid://dqf16djbh0kpo"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_51ojm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_40h0e")
+
+[node name="BreakSFX" type="AudioStreamPlayer" parent="."]

@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl45bj3j7upwg"]
+[gd_scene load_steps=12 format=3 uid="uid://dl45bj3j7upwg"]
 
-[ext_resource type="Texture2D" uid="uid://bsktq8gw04msw" path="res://assets/sprites/block.png" id="1_8r6n6"]
 [ext_resource type="Script" uid="uid://dqf16djbh0kpo" path="res://scripts/block.gd" id="1_cgrg5"]
 [ext_resource type="AudioStream" uid="uid://ddkr8qg8adrje" path="res://assets/sounds/break.wav" id="3_4kun4"]
 [ext_resource type="Texture2D" uid="uid://v63gt4qstrjl" path="res://assets/sprites/block animated.png" id="4_ojgcc"]
@@ -65,10 +64,6 @@ animations = [{
 
 [node name="Block" type="StaticBody2D"]
 script = ExtResource("1_cgrg5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_8r6n6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cgrg5")
