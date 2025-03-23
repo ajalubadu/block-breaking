@@ -94,7 +94,7 @@ label_settings = SubResource("LabelSettings_i7141")
 script = ExtResource("3_71j4m")
 
 [node name="Ball" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(160, 144)
+position = Vector2(160, 97)
 
 [node name="BlockSpawner" type="Node2D" parent="."]
 script = ExtResource("4_k0juu")

@@ -4,4 +4,4 @@ class_name MultiplierBlock
 
 func hit():
 	super()
-	ValueManager
+	#ValueManager.current_multiplier += 0.5
