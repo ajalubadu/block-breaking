@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://33by21enbdlj"]
+[gd_scene load_steps=12 format=3 uid="uid://33by21enbdlj"]
 
 [ext_resource type="Script" uid="uid://cds58aw5xf5wb" path="res://multiplier_block.gd" id="1_ayjot"]
 [ext_resource type="Texture2D" uid="uid://d3irs8j7d4tw" path="res://assets/sprites/pink block animated.png" id="2_bncpx"]
+[ext_resource type="AudioStream" uid="uid://ddkr8qg8adrje" path="res://assets/sounds/break.wav" id="3_bncpx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77b7o"]
 atlas = ExtResource("2_bncpx")
@@ -72,3 +73,5 @@ sprite_frames = SubResource("SpriteFrames_51ojm")
 shape = SubResource("RectangleShape2D_40h0e")
 
 [node name="BreakSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bncpx")
+volume_db = -15.0

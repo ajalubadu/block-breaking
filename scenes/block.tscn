@@ -70,7 +70,7 @@ shape = SubResource("RectangleShape2D_cgrg5")
 
 [node name="BreakSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4kun4")
-volume_db = -13.528
+volume_db = -15.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0nnbb")
