@@ -7,8 +7,8 @@
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxlvu"]
-size = Vector2(4, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cxlvu"]
+radius = 2.0
 
 [node name="Ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_cxlvu")
@@ -22,6 +22,6 @@ script = ExtResource("1_cxlvu")
 texture = ExtResource("1_7s4qf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cxlvu")
+shape = SubResource("CircleShape2D_cxlvu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

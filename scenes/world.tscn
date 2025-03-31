@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bf0aa03dtbx8u"]
+[gd_scene load_steps=20 format=3 uid="uid://bf0aa03dtbx8u"]
 
 [ext_resource type="PackedScene" uid="uid://bvxcjmnngy2p2" path="res://scenes/bar.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://l60bfae15clg" path="res://assets/sprites/background.png" id="2_rwgxs"]
@@ -6,8 +6,12 @@
 [ext_resource type="Script" uid="uid://t7xphttb8ltj" path="res://scripts/speed_counter.gd" id="3_71j4m"]
 [ext_resource type="FontFile" uid="uid://caf3bdmscjls4" path="res://assets/fonts/upheavtt.ttf" id="3_qfnet"]
 [ext_resource type="Script" uid="uid://cxfb3j88hbifc" path="res://scripts/block_spawner.gd" id="4_k0juu"]
+[ext_resource type="LabelSettings" uid="uid://dtig18gwjwb2k" path="res://assets/label_settings.tres" id="5_e3hyu"]
 [ext_resource type="FontFile" uid="uid://dkiptg6tfl152" path="res://assets/fonts/UpheavalTT-BRK-2.ttf" id="5_i7141"]
 [ext_resource type="Script" uid="uid://sks0n7hea618" path="res://scripts/score_counter.gd" id="6_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://cpg1156ofgup3" path="res://assets/sprites/progress bar.png" id="7_w7kh3"]
+[ext_resource type="Script" uid="uid://ckvg27kqyf8sv" path="res://scripts/progress_bar.gd" id="8_e3hyu"]
+[ext_resource type="Script" uid="uid://b0e2335gn1tkq" path="res://scenes/level_counter.gd" id="10_q5onr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
 normal = Vector2(1, 0)
@@ -25,9 +29,18 @@ distance = -240.0
 font = ExtResource("5_i7141")
 font_size = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_i7141"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5onr"]
+atlas = ExtResource("7_w7kh3")
+region = Rect2(15.28, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhx03"]
+atlas = ExtResource("7_w7kh3")
+region = Rect2(-63.855, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q5onr"]
 font = ExtResource("3_qfnet")
 font_size = 20
+font_color = Color(0.941176, 0.607843, 0.141176, 1)
 
 [node name="World" type="Node2D"]
 
@@ -69,29 +82,56 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.1
+offset_left = 1.0
 offset_top = 5.0
-offset_right = -10.0
-text = "00001"
+offset_right = -9.0
+offset_bottom = 5.0
+text = "00017"
 label_settings = SubResource("LabelSettings_qfnet")
 horizontal_alignment = 2
 script = ExtResource("6_4mrxx")
 
-[node name="Control" type="Control" parent="Control"]
-layout_mode = 1
-anchor_right = 0.25
-anchor_bottom = 1.0
-
-[node name="SpeedCounter" type="Label" parent="Control/Control"]
+[node name="SpeedCounter" type="Label" parent="Control/RightSide"]
 z_index = 3
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.1
-offset_left = 10.0
-offset_top = 5.0
+offset_left = 19.0
+offset_top = 37.0
+offset_right = 19.0
+offset_bottom = 37.0
 text = "test"
-label_settings = SubResource("LabelSettings_i7141")
+label_settings = ExtResource("5_e3hyu")
 script = ExtResource("3_71j4m")
+
+[node name="LeftSide" type="Control" parent="Control"]
+layout_mode = 1
+anchor_right = 0.25
+anchor_bottom = 1.0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Control/LeftSide"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 22.0
+offset_right = 70.0
+offset_bottom = 25.0
+max_value = 10.0
+nine_patch_stretch = true
+texture_under = SubResource("AtlasTexture_q5onr")
+texture_progress = SubResource("AtlasTexture_jhx03")
+script = ExtResource("8_e3hyu")
+
+[node name="LevelCounter" type="Label" parent="Control/LeftSide"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 5.0
+offset_right = 71.0
+offset_bottom = 28.0
+text = "17"
+label_settings = SubResource("LabelSettings_q5onr")
+horizontal_alignment = 2
+script = ExtResource("10_q5onr")
 
 [node name="Ball" parent="." instance=ExtResource("3_4wyf3")]
 position = Vector2(206, 104)

@@ -1,12 +1,13 @@
 extends RigidBody2D
 class_name Ball
 
-@export var starting_velocity = 100
+@export var starting_velocity = 50
 
 # 0 is fully intense
 const ANGLE_INTENSITY = 50
 
 var last_velocity: Vector2
+var just_hit := false
 
 
 func _physics_process(delta: float) -> void:
@@ -20,6 +21,8 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body is Block:
 		body.hit()
+	
+	# code to control bounce with bar
 	
 	#elif body is Bar and last_velocity.y >= 0:
 		#print("ALKFJKLF")

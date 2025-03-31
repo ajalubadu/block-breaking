@@ -18,10 +18,10 @@ func _ready() -> void:
 			var spawning_position = Vector2(left_margin + (block_size.x + 1) * i + block_size.x / 2, top_margin + (block_size.y + 1) * j + block_size.y / 2)
 			var new_block
 			
-			if randf() <= 0.05:
-				new_block = MULTIPLIER_BLOCK.instantiate()
-			else:
-				new_block = BLOCK.instantiate()
+			#if randf() <= 0.05:
+				#new_block = MULTIPLIER_BLOCK.instantiate()
+			#else:
+			new_block = BLOCK.instantiate()
 				
 			new_block.position = spawning_position
 			add_child(new_block)

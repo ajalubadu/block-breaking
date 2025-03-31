@@ -7,12 +7,14 @@ class_name Block
 static var block_size := Vector2(7, 7)
 const BREAK = preload("res://assets/sounds/break.wav")
 var score_increase = 1
+var progress_increase = 1
 #static var just_broke := false
 
 
 func hit() -> void:
 	break_sfx.play()
 	ValueManager.score += score_increase
+	ValueManager.progress += progress_increase
 	animated_sprite_2d.play("break")
 	collision_layer = 0
 	collision_mask = 0
