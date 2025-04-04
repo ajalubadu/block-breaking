@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://sks0n7hea618" path="res://scripts/score_counter.gd" id="6_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://cpg1156ofgup3" path="res://assets/sprites/progress bar.png" id="7_w7kh3"]
 [ext_resource type="Script" uid="uid://ckvg27kqyf8sv" path="res://scripts/progress_bar.gd" id="8_e3hyu"]
-[ext_resource type="Script" uid="uid://b0e2335gn1tkq" path="res://scenes/level_counter.gd" id="10_q5onr"]
+[ext_resource type="Script" uid="uid://b0e2335gn1tkq" path="res://scripts/level_counter.gd" id="10_q5onr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
 normal = Vector2(1, 0)

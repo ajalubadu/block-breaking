@@ -1,9 +1,4 @@
-extends StaticBody2D
-#class_name Ball
+extends RigidBody2D
 
-@export var speed = 1
 
-var velocity = Vector2(1,-1) * speed
-
-func _physics_process(delta: float) -> void:
-	position += velocity
+var starting_velocity : float = 50

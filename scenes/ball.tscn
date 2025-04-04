@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6d5865lxpy2t"]
+[gd_scene load_steps=6 format=3 uid="uid://c6d5865lxpy2t"]
 
 [ext_resource type="Texture2D" uid="uid://0hw117l3dnsv" path="res://assets/sprites/ball.png" id="1_7s4qf"]
-[ext_resource type="Script" uid="uid://b6nymb2ev8gbq" path="res://scripts/rigid_ball.gd" id="1_cxlvu"]
+[ext_resource type="Script" uid="uid://cxb4hnfi0fv5q" path="res://scripts/hit_component.gd" id="3_4dx81"]
+[ext_resource type="Script" uid="uid://cc4w56uuluc2p" path="res://scenes/start_component.gd" id="3_f7cbr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
 friction = 0.0
@@ -16,7 +17,6 @@ gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 9140
-script = ExtResource("1_cxlvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7s4qf")
@@ -24,4 +24,10 @@ texture = ExtResource("1_7s4qf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cxlvu")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="HitComponent" type="Node2D" parent="."]
+script = ExtResource("3_4dx81")
+
+[node name="StartComponent" type="Node2D" parent="."]
+script = ExtResource("3_f7cbr")
+
+[connection signal="body_entered" from="." to="HitComponent" method="_on_ball_body_entered"]
