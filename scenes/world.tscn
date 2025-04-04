@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bf0aa03dtbx8u"]
+[gd_scene load_steps=22 format=3 uid="uid://bf0aa03dtbx8u"]
 
 [ext_resource type="PackedScene" uid="uid://bvxcjmnngy2p2" path="res://scenes/bar.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://l60bfae15clg" path="res://assets/sprites/background.png" id="2_rwgxs"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" uid="uid://sks0n7hea618" path="res://scripts/score_counter.gd" id="6_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://cpg1156ofgup3" path="res://assets/sprites/progress bar.png" id="7_w7kh3"]
 [ext_resource type="Script" uid="uid://ckvg27kqyf8sv" path="res://scripts/progress_bar.gd" id="8_e3hyu"]
+[ext_resource type="AudioStream" uid="uid://bulxqane61fv7" path="res://assets/sounds/levelUp.wav" id="9_o8fc1"]
 [ext_resource type="Script" uid="uid://b0e2335gn1tkq" path="res://scripts/level_counter.gd" id="10_q5onr"]
+[ext_resource type="Script" uid="uid://dlhcqfnwv6fdh" path="res://scripts/ball_manager.gd" id="13_jhx03"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4wyf3"]
 normal = Vector2(1, 0)
@@ -122,6 +124,9 @@ texture_under = SubResource("AtlasTexture_q5onr")
 texture_progress = SubResource("AtlasTexture_jhx03")
 script = ExtResource("8_e3hyu")
 
+[node name="LevelUpSFX" type="AudioStreamPlayer" parent="Control/LeftSide/ProgressBar"]
+stream = ExtResource("9_o8fc1")
+
 [node name="LevelCounter" type="Label" parent="Control/LeftSide"]
 layout_mode = 0
 offset_left = 31.0
@@ -138,3 +143,6 @@ position = Vector2(160, 130)
 
 [node name="BlockSpawner" type="Node2D" parent="."]
 script = ExtResource("4_k0juu")
+
+[node name="BallManager" type="Node2D" parent="."]
+script = ExtResource("13_jhx03")

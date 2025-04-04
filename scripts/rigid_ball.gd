@@ -1,5 +1,5 @@
 extends RigidBody2D
-class_name Ball
+#class_name Ball
 
 @export var starting_velocity = 50
 
