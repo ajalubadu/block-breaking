@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7knyrn8jqkr3"]
+[gd_scene load_steps=3 format=3 uid="uid://c7knyrn8jqkr3"]
 
-[ext_resource type="Script" uid="uid://cc4w56uuluc2p" path="res://scenes/start_component.gd" id="1_ialxe"]
+[ext_resource type="Script" uid="uid://cc4w56uuluc2p" path="res://scripts/start_component.gd" id="1_ialxe"]
+[ext_resource type="Texture2D" uid="uid://c421jo8r243hk" path="res://assets/sprites/arrow.png" id="2_5p1hl"]
 
 [node name="StartComponent" type="Node2D"]
 script = ExtResource("1_ialxe")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.313726)
+rotation = 1.5708
+texture = ExtResource("2_5p1hl")
+offset = Vector2(0.5, -25)

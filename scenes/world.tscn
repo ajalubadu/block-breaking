@@ -134,7 +134,7 @@ horizontal_alignment = 2
 script = ExtResource("10_q5onr")
 
 [node name="Ball" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(206, 104)
+position = Vector2(160, 130)
 
 [node name="BlockSpawner" type="Node2D" parent="."]
 script = ExtResource("4_k0juu")

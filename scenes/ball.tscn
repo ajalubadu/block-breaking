@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6d5865lxpy2t"]
 
 [ext_resource type="Texture2D" uid="uid://0hw117l3dnsv" path="res://assets/sprites/ball.png" id="1_7s4qf"]
-[ext_resource type="Script" uid="uid://cxb4hnfi0fv5q" path="res://scripts/hit_component.gd" id="3_4dx81"]
-[ext_resource type="Script" uid="uid://cc4w56uuluc2p" path="res://scenes/start_component.gd" id="3_f7cbr"]
+[ext_resource type="PackedScene" uid="uid://dsl8m35b3oof" path="res://scenes/hit_component.tscn" id="2_f7cbr"]
+[ext_resource type="PackedScene" uid="uid://c7knyrn8jqkr3" path="res://scenes/start_component.tscn" id="3_4dx81"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
 friction = 0.0
@@ -24,10 +24,8 @@ texture = ExtResource("1_7s4qf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cxlvu")
 
-[node name="HitComponent" type="Node2D" parent="."]
-script = ExtResource("3_4dx81")
+[node name="HitComponent" parent="." instance=ExtResource("2_f7cbr")]
 
-[node name="StartComponent" type="Node2D" parent="."]
-script = ExtResource("3_f7cbr")
+[node name="StartComponent" parent="." instance=ExtResource("3_4dx81")]
 
 [connection signal="body_entered" from="." to="HitComponent" method="_on_ball_body_entered"]
