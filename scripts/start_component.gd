@@ -3,7 +3,6 @@ class_name StartComponent
 
 @onready var arrow: Sprite2D = $Arrow
 
-@export var starting_velocity : float = 50
 var aiming : bool = true
 
 
@@ -12,12 +11,15 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
+	if event.is_action_pressed("click") and aiming:
+		get_parent().freeze = false
+		
 		var target_direction = get_global_mouse_position() - get_parent().position
 		
-		get_parent().linear_velocity = target_direction.normalized() * starting_velocity
+		get_parent().linear_velocity = target_direction.normalized() * get_parent().starting_velocity
 		
 		arrow.visible = false
+		aiming = false
 
 
 #func _ready() -> void:

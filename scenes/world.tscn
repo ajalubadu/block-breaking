@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bf0aa03dtbx8u"]
+[gd_scene load_steps=21 format=3 uid="uid://bf0aa03dtbx8u"]
 
 [ext_resource type="PackedScene" uid="uid://bvxcjmnngy2p2" path="res://scenes/bar.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://l60bfae15clg" path="res://assets/sprites/background.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://c6d5865lxpy2t" path="res://scenes/ball.tscn" id="3_4wyf3"]
 [ext_resource type="Script" uid="uid://t7xphttb8ltj" path="res://scripts/speed_counter.gd" id="3_71j4m"]
 [ext_resource type="FontFile" uid="uid://caf3bdmscjls4" path="res://assets/fonts/upheavtt.ttf" id="3_qfnet"]
 [ext_resource type="Script" uid="uid://cxfb3j88hbifc" path="res://scripts/block_spawner.gd" id="4_k0juu"]
@@ -138,11 +137,10 @@ label_settings = SubResource("LabelSettings_q5onr")
 horizontal_alignment = 2
 script = ExtResource("10_q5onr")
 
-[node name="Ball" parent="." instance=ExtResource("3_4wyf3")]
-position = Vector2(160, 130)
-
 [node name="BlockSpawner" type="Node2D" parent="."]
 script = ExtResource("4_k0juu")
 
 [node name="BallManager" type="Node2D" parent="."]
 script = ExtResource("13_jhx03")
+
+[connection signal="leveled_up" from="Control/LeftSide/ProgressBar" to="BallManager" method="level_up"]
